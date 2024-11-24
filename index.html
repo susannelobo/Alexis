@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a id="cart-button">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="cart-container" class="cart-container">
+        <h2>Your Cart</h2>
+        <div class="cart-items">
+            <div class="cart-item">
+               
+            </div>
+        </div>
+        <div class="cart-total">
+            Total: 0/-
+        </div>
+        <!-- Cart Message -->
+<div class="cart-message">Cart is Empty</div>
+    <!-- Checkout Button -->
+    <button id="productButton">Checkout</button>
+    
+    <!-- Clear Cart Button (optional) -->
+    <button onclick="clearCart()">Clear Cart</button>
+</div>
+
+<div class="payment">
+    <h1 class="payTitle">Personal Information</h1>
+    <label>Name and Surname</label>
+    <input type="text" placeholder="John Doe" class="payInput">
+    <label>Phone Number</label>
+    <input type="text" placeholder="+1 234 5678" class="payInput">
+    <label>Address</label>
+    <input type="text" placeholder="Elton St 21 22-145" class="payInput">
+    <h1 class="payTitle">Card Information</h1>
+    <div class="cardIcons">
+        <img src="./img/visa.png" width="40" alt="" class="cardIcon">
+        <img src="./img/master.png" alt="" width="40" class="cardIcon">
+    </div>
+    <input type="password" class="payInput" placeholder="Card Number">
+    <div class="cardInfo">
+        <input type="text" placeholder="mm" class="payInput sm">
+        <input type="text" placeholder="yyyy" class="payInput sm">
+        <input type="text" placeholder="cvv" class="payInput sm">
+    </div>
+    <button class="payButton">Checkout!</button>
+    <span class="close">X</span>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="home">
+    <div class="newSeason">
+        <div class="nsItem">
+            <img src="images/home.jpg"
+                alt="" class="nsImg">
+        </div>
+        <div class="nsItem">
+            <h1 class="nsTitle"> Welcome to Coffee Bliss!</h1>
+            <h3 >Your Perfect Cup of Coffee Awaits</h3>
+        </div>
+    </div>
+</section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2 class="menuTitle">MENU</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="images/espresso.jpg" alt="Espresso" height="370">
+                <h3>Espresso</h3>
+                <p>A rich, full-bodied coffee brewed with love. With notes of dark chocolate and sweet caramel.</p>
+                <p class="price">300/-</p>
+                <button onclick="addToCart('Espresso', 300)" class="add-to-cart" data-name="Espresso" data-price="300">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/latte.jpg" alt="Latte" height="370">
+                <h3>Latte</h3>
+                <p>Smooth, creamy, and perfect for any time of day, enjoy the sweet harmony of rich mocha.</p>
+                <p class="price">450/-</p>
+                <button onclick="addToCart('Espresso', 300)" class="add-to-cart" data-name="Latte" data-price="450">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/capuchino.jpg" alt="Cappuccino" height="370">
+                <h3>Cappuccino</h3>
+                <p>A smooth, sweet and balanced roast with warm notes of toasted almonds and butterscotch candy.</p>
+                <p class="price">400/-</p>
+                <button button onclick="addToCart('Cappuccino', 400)" class="add-to-cart" data-name="Cappuccino" data-price="4.00">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/ma.jpg" alt="Matcha" height="370">
+                <h3>Matcha</h3>
+                <p>A Matcha Tea is organic, vegan, gluten-free, high quality, full of antioxidants and just simply delicious.</p>
+                <p class="price">400/-</p>
+                <button button onclick="addToCart('Matcha', 400)" class="add-to-cart" data-name="Matcha" data-price="400">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/americano.jpg" alt="Americano" height="370">
+                <h3>Americano</h3>
+                <p> Rich and velvety, toasty and creamy with notes of dark chocolate, honey and toasted walnuts.</p>
+                <p class="price">400/-</p>
+                <button button onclick="addToCart('Americano', 300)" class="add-to-cart" data-name="Americano" data-price="400">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At Coffee Bliss, we believe that every cup of coffee should be an experience. We source the finest beans from around the world and craft each drink with care and expertise. Come visit us for a moment of relaxation and great taste.</p>
+    
+    <div class="features">
+        <div class="feature">
+            <img src="./images/shipping.png" alt="" class="featureIcon">
+            <span class="featureTitle">FREE SHIPPING</span>
+            <span class="featureDesc">Free worldwide shipping on all orders.</span>
+        </div>
+        <div class="feature">
+            <img class="featureIcon" src="./images/return.png" alt="">
+            <span class="featureTitle">30 DAYS RETURN</span>
+            <span class="featureDesc">No question return and easy refund in 14 days.</span>
+        </div>
+        <div class="feature">
+            <img class="featureIcon" src="./images/gift.png" alt="">
+            <span class="featureTitle">GIFT CARDS</span>
+            <span class="featureDesc">Buy gift cards and use coupon codes easily.</span>
+        </div>
+        <div class="feature">
+            <img class="featureIcon" src="./images/contact.png" alt="">
+            <span class="featureTitle">CONTACT US!</span>
+            <span class="featureDesc">Keep in touch via email and support system.</span>
+        </div>
+    </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" id="name" required>
+            <input type="email" placeholder="Your Email" id="email" required>
+            <textarea placeholder="Your Message" id="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+
+
+      
+    <footer>
+        <div class="footerLeft">
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">About Us</h1>
+                <ul class="fList">
+                    <li class="fListItem">Company</li>
+                    <li class="fListItem">Contact</li>
+                    <li class="fListItem">Careers</li>
+                    <li class="fListItem">Affiliates</li>
+                    <li class="fListItem">Stores</li>
+                </ul>
+            </div>
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">Useful Links</h1>
+                <ul class="fList">
+                    <li class="fListItem">Support</li>
+                    <li class="fListItem">Refund</li>
+                    <li class="fListItem">FAQ</li>
+                    <li class="fListItem">Feedback</li>
+                    <li class="fListItem">Stories</li>
+                </ul>
+            </div>
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">Products</h1>
+                <ul class="fList">
+                    <li class="fListItem">Coffe beans </li>
+                    <li class="fListItem">Cold brew</li>
+                    <li class="fListItem">Matcha and Tea</li>
+                    <li class="fListItem">Instant Coffee</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerRight">
+            <div class="footerRightMenu">
+                <h1 class="fMenuTitle">Subscribe to our newsletter</h1>
+                <div class="fMail">
+                    <input type="text" placeholder="your@email.com" class="fInput">
+                    <button class="fButton">Join!</button>
+                </div>
+            </div>
+            <div class="footerRightMenu">
+                <h1 class="fMenuTitle">Follow Us</h1>
+                <div class="fIcons">
+                    <img src="./img/facebook.png" alt="" class="fIcon">
+                    <img src="./img/twitter.png" alt="" class="fIcon">
+                    <img src="./img/instagram.png" alt="" class="fIcon">
+                    <img src="./img/whatsapp.png" alt="" class="fIcon">
+                </div>
+            </div>
+            <div class="footerRightMenu">
+                <span class="copyright">@Coffee Bliss. All rights reserved. 2024.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
